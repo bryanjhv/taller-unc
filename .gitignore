@@ -1,0 +1,12 @@
+# WebStorm
+.idea/
+
+# Jekyll
+_site/
+.jekyll-metadata
+
+# Libraries
+vendor/
+
+# Source
+_src/
