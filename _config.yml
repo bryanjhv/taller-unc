@@ -8,7 +8,7 @@ url: https://bryanjhv.github.io
 baseurl: /taller-unc
 repo: https://github.com/bryanjhv/taller-unc
 permalink: /:year/:month/:day/
-local: true
+local: false
 
 # Parsing options
 encoding: utf-8
