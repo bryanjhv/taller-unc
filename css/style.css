@@ -6,6 +6,10 @@ p, h1, h2, h3, h4, h5, h6, a {
   -webkit-font-smoothing: antialiased;
 }
 
+iframe {
+  display: none;
+}
+
 .index h2:first-child {
   margin-top: 50px;
 }

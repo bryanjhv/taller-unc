@@ -69,7 +69,7 @@
    */
   function userChanged(user) {
     g.dispatchEvent(makeEvent(events.userChanged, {
-      googleUser: user.getId() ? user : null
+      googleUser: auth2.isSignedIn.get() ? user : null
     }));
   }
 
