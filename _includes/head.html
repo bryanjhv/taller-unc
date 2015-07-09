@@ -1,0 +1,16 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta name="author" content="Bryan Horna">
+  {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0{% if is_presentation %}, maximum-scale=1.0, user-scalable=no, minimal-ui{% endif %}">
+  <title>{{ title }}</title>
+  <link rel="canonical" href="{{ canonical }}">
+  {% if is_presentation %}<link rel="stylesheet" href="{{ cdn.reveal }}/css/reveal.min.css">
+  <link rel="stylesheet" href="{{ cdn.reveal }}/css/theme/black.min.css" id="theme">
+  <link rel="stylesheet" href="{{ cdn.reveal }}/lib/css/zenburn.min.css">{% else %}<link rel="stylesheet" href="{{ cdn.materialize }}/css/materialize.min.css">{% endif %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+  <!--[if lte IE 9]>
+  <script src="{{ cdn.reveal }}/lib/js/html5shiv.min.js"></script>
+  <![endif]-->
+</head>

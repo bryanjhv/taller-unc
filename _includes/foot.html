@@ -1,0 +1,10 @@
+<script src="{{ site.baseurl }}/js/login.js"></script>
+<script src="{{ cdn.google }}/platform.js?onload=startApp" async defer></script>
+<script src="{{ cdn.jquery }}/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/js/util.js"></script>{% if is_presentation %}
+<script src="{{ cdn.reveal }}/lib/js/head.min.js"></script>
+<script src="{{ cdn.reveal }}/js/reveal.min.js"></script>
+<script src="{{ site.baseurl }}/js/config.js"></script>
+{% else %}
+<script src="{{ cdn.materialize }}/js/materialize.min.js"></script>
+{% endif %}<script src="{{ site.baseurl }}/js/main.js"></script>
