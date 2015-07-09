@@ -1,0 +1,26 @@
+# Site settings
+title: Taller UNC
+description: >
+  Contenido compartido y usado en el taller de programación y hacking que
+  imparto en la E.A.P. Ingeniería de Sistemas de la Universidad Nacional de
+  Cajamarca.
+url: https://bryanjhv.github.io
+baseurl: /taller-unc
+repo: https://github.com/bryanjhv/taller-unc
+permalink: /:year/:month/:day/
+local: true
+
+# Parsing options
+encoding: utf-8
+timezone: America/Lima
+exclude: [README.md, LICENSE]
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ''
+      type: posts
+    values:
+      layout: presentation
+      kind: presentation

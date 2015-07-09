@@ -1,0 +1,22 @@
+{% assign cdn = site.data.cdn %}
+{% if site.local %}
+  {% assign cdn = cdn.local %}
+{% endif %}
+
+{% assign kind = page.kind %}
+{% if kind == 'presentation' %}
+  {% assign is_presentation = true %}
+{% endif %}
+
+{% assign title = page.title %}
+{% if title == none %}
+  {% assign title = site.title %}
+{% endif %}
+
+{% capture canonical %}{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+
+{% assign description = page.description %}
+{% if description == none %}
+  {% assign description = site.description %}
+{% endif %}
+{% assign description = description | strip_html | strip_newlines %}

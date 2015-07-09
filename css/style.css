@@ -1,0 +1,76 @@
+a {
+  outline: none; /* To Fix firefox dotted border */
+}
+
+p, h1, h2, h3, h4, h5, h6, a {
+  -webkit-font-smoothing: antialiased;
+}
+
+.index h2:first-child {
+  margin-top: 50px;
+}
+
+.index h4 {
+  margin-top: 25px;
+}
+
+.index {
+  background-color: #fcfcfc;
+}
+
+.index p {
+  text-align: justify;
+}
+
+.index p, li a {
+  font-size: 120%;
+}
+
+.index .banner, .index .page-footer {
+  background-color: #4db6ac;
+}
+
+.index .banner .container {
+  position: relative;
+}
+
+.index .banner .header {
+  color: #fff;
+}
+
+.index .banner h1 {
+  margin-top: 16px;
+}
+
+.index .header {
+  color: #4db6ac;
+  font-weight: 300;
+}
+
+.index .page-footer a {
+  color: #fff;
+  font-weight: 500;
+}
+
+.index .page-footer a:hover {
+  text-decoration: underline;
+}
+
+.index .page-footer #loginBtn:hover,
+.index .page-footer #logoutBtn:hover {
+  text-decoration: none;
+}
+
+.index .page-footer #logoutBtn {
+  margin-top: 8px;
+}
+
+.index .page-footer .card-panel .valign-wrapper {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  #tagline {
+    font-size: 150%;
+  }
+}
