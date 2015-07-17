@@ -4,6 +4,12 @@
 
 $(function () {
 
+  var host = '{{ site.url }}'.split('//').pop();
+
+  if (location.host === host && location.protocol !== 'https:') {
+    location.protocol = 'https';
+  }
+
   // We have JavaScript enabled
   var body = $('body');
   body.className = body.className.replace(/no-js ?/, '');

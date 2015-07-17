@@ -231,6 +231,10 @@ replaces = {
     to: '---\n---\n{% assign cdn = site.data.cdn %}{% if site.local %}' +
       '{% assign cdn = cdn.local %}{% endif %}\n'
   }],
+  'js/main.js': [{
+    from: /^/,
+    to: '---\n---\n'
+  }],
   'index.html': [{
     from: />\n {14}\{% f/,
     to: '>{% f'
