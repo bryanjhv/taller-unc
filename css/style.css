@@ -10,11 +10,15 @@ iframe {
   display: none;
 }
 
-.index h2:first-child {
-  margin-top: 50px;
+.index h2 {
+  margin-top: 0.3rem;
 }
 
-.index h4 {
+.index h2.truncate {
+  margin-top: 3rem;
+}
+
+.index h4:first-of-type {
   margin-top: 25px;
 }
 
