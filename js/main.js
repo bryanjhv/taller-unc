@@ -1,5 +1,3 @@
----
----
 /*jslint sloppy: true, unparam: true, vars: true*/
 /*jslint indent: 2, maxerr: 50, maxlen: 80*/
 /*global $, each, Login, auth2*/

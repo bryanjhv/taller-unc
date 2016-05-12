@@ -24,7 +24,8 @@ kind: index
         <div class="row">
           <div class="col s12">
             <h2 class="header truncate">Presentaciones</h2>
-            <ul class="collapsible" data-collapsible="expandable">{% for post in site.posts | sort: 'date' %}
+            <ul class="collapsible" data-collapsible="expandable">
+              {% for post in site.posts | sort: 'date' %}
               <li>
                 <div class="collapsible-header active">
                   <a href="{{ post.url }}">{{ post.date | date_to_string | replace: 'Jan', 'Ene' | replace: 'Apr', 'Abr' | replace: 'Aug', 'Ago' | replace: 'Sep', 'Set' | replace: 'Dec', 'Dic' }}</a>
@@ -33,12 +34,14 @@ kind: index
                   <p><b>{{ post.title }}</b><br>
                     {{ post.description | strip_newlines }}</p>
                 </div>
-              </li>{% else %}
+              </li>
+              {% else %}
               <li>
                 <div class="collapsible-header">
                   Aún no hay presentaciones.
                 </div>
-              </li>{% endfor %}
+              </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
