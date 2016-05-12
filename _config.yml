@@ -5,8 +5,8 @@ description: >
   imparto en la E.A.P. Ingeniería de Sistemas de la Universidad Nacional de
   Cajamarca.
 url: https://bryanjhv.github.io
-baseurl: /taller-unc
-repo: https://github.com/bryanjhv/taller-unc
+baseurl: /talleres
+repo: https://github.com/bryanjhv/talleres
 permalink: /:year/:month/:day/
 local: false
 
