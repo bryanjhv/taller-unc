@@ -7,10 +7,12 @@
 
 $(function () {
 
-  var host = '{{ site.url }}'.split('//').pop();
-
-  if (location.host === host && location.protocol !== 'https:') {
-    location.protocol = 'https';
+  var subdomain = '{{ site.url }}'.split('//')[1].split('.')[0];
+  if (location.pathname.indexOf(subdomain) == 1) {
+    var url = '';
+    url += location.protocol + '//' + subdomain + '.' + location.host;
+    url += location.pathname.slice(subdomain.length + 1);
+    location.assign(url);
   }
 
   // We have JavaScript enabled
