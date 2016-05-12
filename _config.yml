@@ -4,8 +4,7 @@ description: >
   Contenido compartido y usado en el taller de programación y hacking que
   imparto en la E.A.P. Ingeniería de Sistemas de la Universidad Nacional de
   Cajamarca.
-url: https://bryanjhv.github.io
-baseurl: /talleres
+url: https://talleres.bryanjhv.xyz
 repo: https://github.com/bryanjhv/talleres
 permalink: /:year/:month/:day/
 local: false
