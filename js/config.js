@@ -1,3 +1,6 @@
+---
+---
+
 /*jslint ass: true, browser: true, nomen: true, sloppy: true, vars: true*/
 /*jslint indent: 2, maxerr: 50, maxlen: 80*/
 /*global $, io, hljs, Login, Reveal*/
