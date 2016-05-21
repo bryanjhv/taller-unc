@@ -3,6 +3,7 @@ exclude:
 - README.md
 - LICENSE
 - Gemfile*
+- bower.json
 encoding: utf-8
 
 # Plugins

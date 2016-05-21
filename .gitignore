@@ -7,3 +7,6 @@ _site/
 
 # Bundler
 Gemfile.lock
+
+# Bower
+lib/

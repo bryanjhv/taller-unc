@@ -1,0 +1,17 @@
+{
+  "name": "talleres",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "lib/",
+    "node_modules/"
+  ],
+  "authors": [
+    {
+      "name": "Bryan Horna",
+      "email": "bryanjhv@gmail.com",
+      "homepage": "https://bryanjhv.xyz"
+    }
+  ],
+  "private": true
+}
