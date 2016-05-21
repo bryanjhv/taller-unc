@@ -1,0 +1,47 @@
+- name: Java
+  link: https://www.java.com
+  desc: >
+    Uno de los más potentes, conocidos y usados en la actualidad, es un lenguaje
+    de programación orientado a objetos, que corre en gran cantidad de
+    plataformas sin problemas. En la Universidad antes mencionada se lo enseña
+    como una base.
+
+- name: JavaScript
+  link: '#'
+  desc: >
+    Lenguaje de programación versátil y fácil de usar y aprender. Puede ser
+    ejecutado en cualquier navegador web que lo soporte, y se lo llama "el
+    lenguaje de la web", pues sin él toda web que conocemos no lograría ser ni
+    dinámica y mucho menos interactiva. En el taller lo uso como base junto a
+    las diapositivas, y el entorno node.js.
+
+- name: node.js
+  link: https://nodejs.org
+  desc: >
+    No es precisamente un lenguaje de programación, pero considerando su
+    expansión y uso por los desarrolladores, puede ser considerado como tal. Es
+    JavaScript pero del lado del servidor, y permite al igual que muchos otros
+    lenguajes especializados, las capacidades para actuar como servidor web y
+    mucho más.
+
+- name: PHP
+  link: https://secure.php.net
+  desc: >
+    Otro, y tal vez el mejor lenguaje de programación de servidor existente.
+    Suele ser rápido de aprender, y fácil de instalar en cualquier entorno,
+    mencionando al igual que puede ser ejecutado en cualquier plataforma
+    soportada, además de servir como "backend" en muchas web que conocemos
+    actualmente. En el taller suelo usarlo para las sesiones de hacking, debido
+    a un deseo por derrumbar las críticas acerca de la seguridad de este,
+    evadiéndose el desarrollador el mantenimiento e implementación de mecanismos
+    de seguridad.
+
+- name: Python
+  link: https://www.python.org
+  desc: >
+    Si deseas aprender un lenguaje de programación rápido y facilito, sin lugar
+    a dudas tu elección será este. Su simplicidad ha hecho que a día de hoy sea
+    algo grandioso y la comunidad cree diferentes usos que van desde
+    aplicaciones en consola, pasando por aplicaciones de escritorio, servidores
+    web, hasta uso netamente científico y matemático. Sin embargo, en el taller
+    es usado por la simplicidad que brinda para crear un servidor web.

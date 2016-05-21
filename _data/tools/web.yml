@@ -1,0 +1,25 @@
+- name: GitHub
+  link: https://github.com
+  desc: >
+    El sitio web desde el cual estás leyendo esto. La más conocida plataforma
+    colaborativa para proyectos que usa el sistema de control de versiones Git
+    para ello, y que además de sólo eso, brinda varios beneficios para
+    desarrolladores, estudiantes, y diseñadores con su vasta lista de productos.
+    Además, es una de las que impulsan fuertemente el movimiento de software
+    libre.
+
+- name: Jekyll
+  link: http://jekyllrb.com
+  desc: >
+    Motor de creación de páginas web basado en Ruby y creado por los ingenieros
+    de GitHub y que se brinda como servicio gratuito en la web para crear
+    páginas web de todo tipo y con una estructura fácil de entender, mediante
+    GitHub Pages.
+
+- name: hackXcrack
+  link: https://foro.hackxcrack.net
+  desc: >
+    Sitio web con gran contenido sobre hacking y cracking, tal vez algo antiguo
+    a día de hoy pero útil para entender tal mundo. Ahora ha hecho disponibles
+    de forma gratuita revistas sobre hacking, tal vez las mejores (y más
+    entendibles y básicas) que se encuentre en la web.

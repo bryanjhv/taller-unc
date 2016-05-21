@@ -1,0 +1,21 @@
+- name: PSeInt
+  link: http://pseint.sourceforge.net
+  desc: >
+    Excelente programa para trabajar el intelecto mediante la escritura de
+    pseudocódigo como lenguaje de programación, además permitiendo crear y
+    generar diagramas de flujo y N-S.
+
+- name: Eclipse
+  link: https://eclipse.org
+  desc: >
+    Uno de los IDE más conocidos y fáciles de usar para Java (y, con ayuda de
+    complementos, otros lenguajes de programación). Es recomendado para todo
+    tipo de público, y preferido en la Universidad antes mencionada.
+
+- name: nmp-server
+  link: https://code.google.com/p/nmp-server/
+  desc: >
+    Ligero pero poderoso programa que ayuda a montar un servidor web en Windows
+    de una forma fácil y rápida. Incluye el servidor web nginx (es veloz), el
+    lenguaje de programación PHP y un motor de base de datos MySQL (el cual se
+    integra muy bien con PHP), configurado de forma mínima y lista para usar.

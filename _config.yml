@@ -9,6 +9,7 @@ encoding: utf-8
 gems:
 - jekyll-github-metadata
 - jekyll-seo-tag
+- jekyll-sitemap
 
 # Conversion
 markdown: kramdown

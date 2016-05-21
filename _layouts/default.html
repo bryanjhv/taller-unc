@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-{% include vars.html %}
-<html>
+<html>{% include vars.html %}
 {% include head.html %}
-<body class="no-js{% if kind %} {{ kind }}"{% endif %}>
+<body class="no-js {{ kind }}">
 {{ content }}
 {% include foot.html %}
 </body>

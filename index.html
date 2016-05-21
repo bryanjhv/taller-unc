@@ -5,283 +5,103 @@ kind: index
 ---
 
 <main>
-  <div class="section banner">
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-          <h1 class="header center-on-small-only">Taller UNC</h1>
-          <h4 class="light teal-text text-lighten-5 center-on-small-only" id="tagline">
-            Contenido compartido y usado en el taller de programación y hacking,
-            el cual imparto en la EAPIS-UNC.
-          </h4>
-        </div>
-      </div>
+<div class="section banner">
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <h1 class="header center-on-small-only">Taller UNC</h1>
+      <h4 class="light teal-text text-lighten-5 center-on-small-only" id="tagline">{{ site.description | strip_newlines }}</h4>
     </div>
   </div>
-  <div class="container">
+</div>
+</div>
+<div class="container">
+<div class="row">
+  <div class="section col s12">
     <div class="row">
-      <div class="section col s12">
-        <div class="row">
-          <div class="col s12">
-            <h2 class="header truncate">Presentaciones</h2>
-            <ul class="collapsible" data-collapsible="expandable">
-              {% for post in site.posts | sort: 'date' %}
-              <li>
-                <div class="collapsible-header active">
-                  <a href="{{ post.url }}">{{ post.date | date_to_string | replace: 'Jan', 'Ene' | replace: 'Apr', 'Abr' | replace: 'Aug', 'Ago' | replace: 'Sep', 'Set' | replace: 'Dec', 'Dic' }}</a>
-                </div>
-                <div class="collapsible-body">
-                  <p><b>{{ post.title }}</b><br>
-                    {{ post.description | strip_newlines }}</p>
-                </div>
-              </li>
-              {% else %}
-              <li>
-                <div class="collapsible-header">
-                  Aún no hay presentaciones.
-                </div>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <h2 class="header">Herramientas usadas</h2>
-            <p>Durante el taller he usado (y seguiré usando) varias herramientas
-              de disponibilidad pública, las que incluyen sitios web, lenguajes
-              de programación, programas, frameworks, revistas, entre otros:</p>
-            <h4>Sitios web</h4>
-            <ul class="collapsible" data-collapsible="expandable">
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://github.com">GitHub</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>El sitio web desde el cual estás leyendo esto. La más
-                    conocida plataforma colaborativa para proyectos que usa el
-                    sistema de control de versiones Git para ello, y que además
-                    de sólo eso, brinda varios beneficios para desarrolladores,
-                    estudiantes, y diseñadores con su vasta lista de productos.
-                    Además, es una de las que impulsan fuertemente el movimiento
-                    de software libre.</p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header active">
-                  <a href="http://jekyllrb.com">Jekyll</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Motor de creación de páginas web basado en Ruby y creado
-                    por los ingenieros de GitHub y que se brinda como servicio
-                    gratuito en la web para crear páginas web de todo tipo y con
-                    una estructura fácil de entender, mediante GitHub Pages.</p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://foro.hackxcrack.net">hackXcrack</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Sitio web con gran contenido sobre hacking y cracking, tal
-                    vez algo antiguo a día de hoy pero útil para entender tal
-                    mundo. Ahora ha hecho disponibles de forma gratuita revistas
-                    sobre hacking, tal vez las mejores (y más entendibles y
-                    básicas) que se encuentre en la web.</p>
-                </div>
-              </li>
-            </ul>
-            <h4>Lenguajes de programación</h4>
-            <ul class="collapsible" data-collapsible="expandable">
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://www.java.com">Java</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Uno de los más potentes, conocidos y usados en la
-                    actualidad, es un lenguaje de programación orientado a
-                    objetos, que corre en gran cantidad de plataformas sin
-                    problemas. En la Universidad antes mencionada se lo enseña
-                    como una base.</p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header active">
-                  <a href="#">JavaScript</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Lenguaje de programación versátil y fácil de usar y
-                    aprender. Puede ser ejecutado en cualquier navegador web que
-                    lo soporte, y se lo llama “el lenguaje de la web”, pues sin
-                    él toda web que conocemos no lograría ser ni dinámica y
-                    mucho menos interactiva. En el taller lo uso como base junto
-                    a las diapositivas, y el entorno node.js.</p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://nodejs.org">node.js</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>No es precisamente un lenguaje de programación, pero
-                    considerando su expansión y uso por los desarrolladores,
-                    puede ser considerado como tal. Es JavaScript pero del lado
-                    del servidor, y permite al igual que muchos otros lenguajes
-                    especializados, las capacidades para actuar como servidor
-                    web y mucho más.</p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://secure.php.net">PHP</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Otro, y tal vez el mejor lenguaje de programación de
-                    servidor existente. Suele ser rápido de aprender, y fácil de
-                    instalar en cualquier entorno, mencionando al igual que
-                    puede ser ejecutado en cualquier plataforma soportada,
-                    además de servir como “backend” en muchas web que conocemos
-                    actualmente. En el taller suelo usarlo para las sesiones de
-                    hacking, debido a un deseo por derrumbar las críticas acerca
-                    de la seguridad de este, evadiéndose el desarrollador el
-                    mantenimiento e implementación de mecanismos de seguridad.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://www.python.org">Python</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Si deseas aprender un lenguaje de programación rápido y
-                    facilito, sin lugar a dudas tu elección será este. Su
-                    simplicidad ha hecho que a día de hoy sea algo grandioso y
-                    la comunidad cree diferentes usos que van desde aplicaciones
-                    en consola, pasando por aplicaciones de escritorio,
-                    servidores web, hasta uso netamente científico y matemático.
-                    Sin embargo, en el taller es usado por la simplicidad que
-                    brinda para crear un servidor web.</p>
-                </div>
-              </li>
-            </ul>
-            <h4>Programas</h4>
-            <ul class="collapsible" data-collapsible="expandable">
-              <li>
-                <div class="collapsible-header active">
-                  <a href="http://pseint.sourceforge.net">PSeInt</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Excelente programa para trabajar el intelecto mediante la
-                    escritura de pseudocódigo como lenguaje de programación,
-                    además permitiendo crear y generar diagramas de flujo y N-S.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://eclipse.org">Eclipse</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Uno de los IDE más conocidos y fáciles de usar para Java
-                    (y, con ayuda de complementos, otros lenguajes de
-                    programación). Es recomendado para todo tipo de público, y
-                    preferido en la Universidad antes mencionada.</p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://code.google.com/p/nmp-server/">nmp-server</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Ligero pero poderoso programa que ayuda a montar un
-                    servidor web en Windows de una forma fácil y rápida. Incluye
-                    el servidor web nginx (es veloz), el lenguaje de
-                    programación PHP y un motor de base de datos MySQL (el cual
-                    se integra muy bien con PHP), configurado de forma mínima y
-                    lista para usar.</p>
-                </div>
-              </li>
-            </ul>
-            <h4>Frameworks</h4>
-            <ul class="collapsible" data-collapsible="expandable">
-              <li>
-                <div class="collapsible-header active">
-                  <a href="https://github.com/hakimel/reveal.js">reveal.js</a>
-                </div>
-                <div class="collapsible-body">
-                  <p>Es un marco de trabajo para crear presentaciones
-                    (diapositivas) en la web, mediante prácticamente el uso de
-                    HTML y una pizca de JavaScript y CSS. Es el que actualmente
-                    uso para las diapositivas del taller debido a mi costumbre
-                    con el código y las ventajas que ofrece (ejecución de código
-                    en la web, resaltado de sintaxis, “multiplex”, notas, entre
-                    otras).</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <h2 class="header">Licencia</h2>
-            <p>MIT: <i>Eres libre para usar este código como desees, mientras
-              indiques que tiene licencia MIT</i>.</p>
-          </div>
-        </div>
+      <div class="col s12">
+        <h2 class="header truncate">Presentaciones</h2>
+        <ul class="collapsible" data-collapsible="expandable">
+          {% for post in site.posts | sort: 'date' %}
+          <li>
+            <div class="collapsible-header active">
+              <a href="{{ post.url }}">{{ post.date | date_to_string | replace: 'Jan', 'Ene' | replace: 'Apr', 'Abr' | replace: 'Aug', 'Ago' | replace: 'Sep', 'Set' | replace: 'Dec', 'Dic' }}</a>
+            </div>
+            <div class="collapsible-body">
+              <p><b>{{ post.title }}</b><br>
+                {{ post.description | strip_newlines }}</p>
+            </div>
+          </li>
+          {% else %}
+          <li>
+            <div class="collapsible-header">
+              Aún no hay presentaciones.
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <h2 class="header">Herramientas usadas</h2>
+        <p>Durante el taller he usado (y seguiré usando) varias herramientas
+          de disponibilidad pública, las que incluyen sitios web, lenguajes
+          de programación, programas, frameworks, revistas, entre otros:</p>
+        {% assign tools = site.data.tools %}
+        {% for topic in tools.toc %}
+        <h4>{{ topic[1] }}</h4>
+        <ul class="collapsible" data-collapsible="expandable">
+          {% for item in tools[topic.first] %}
+          <li>
+            <div class="collapsible-header active">
+              <a href="{{ item.link }}">{{ item.name }}</a>
+            </div>
+            <div class="collapsible-body">
+              <p>{{ item.desc | smartify }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <h2 class="header">Licencia</h2>
+        <p>MIT: <i>Eres libre para usar este código como desees, mientras
+          indiques que tiene licencia MIT</i>.</p>
       </div>
     </div>
   </div>
+</div>
+</div>
 </main>
 
 <footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l4 s12">
-        <h5 class="white-text">Acerca del autor</h5>
-        <p class="grey-text text-lighten-4">
-          La persona que mantiene este sitio web y el contenido que en él se
-          incluye es <a href="https://bryanjhv.me">Bryan Horna</a>, el cual es
-          un estudiante más de la Universidad antes dicha, y tiene la gran
-          esperanza que algún día Perú sepa utilizar sus conocimientos de
-          informática para construir y/o desarrollar algo útil y valioso para la
-          sociedad mundial.
-        </p>
-      </div>
-      <div class="col l4 s12">
-        <h5 class="white-text">Acerca de esta web</h5>
-        <p class="grey-text text-lighten-4">
-          La presente web fue hecha usando el genial motor de plantillas
-          <a href="http://jekyllrb.com">Jekyll</a>, usa para el diseño el
-          moderno framework <a href="http://materializecss.com">Materialize</a>,
-          y está hospedado por <a href="https://github.com">GitHub</a>.<br>
-          Los recursos para las presentaciones usan como framework
-          <a href="https://github.com/hakimel/reveal.js">reveal.js</a>, y el
-          control maestro de las presentaciones es realizado gracias a Google.
-        </p>
-      </div>
-      <div class="col l4 s12">
-        <h5 class="white-text">Contribuyendo</h5>
-        <p class="grey-text text-lighten-4">
-          Si desearas contribuir a este proyecto, puedes abrir un “issue” en la
-          <a href="{{ site.github.repository_url }}">página</a> en GitHub
-          del proyecto indicando lo que deseas contribuir y dónde debe ser
-          colocado. Suelo preservar los créditos de todo aquel que contribuye,
-          además estaré muy agradecido por ello al igual que los lectores :)
-        </p>
-      </div>
+<div class="container">
+  <div class="row">
+    {% for item in site.data.footer %}
+    <div class="col l4 s12">
+      <h5 class="white-text">{{ item.title }}</h5>
+      <p class="grey-text text-lighten-4">
+        {{ item.content | liquidify | markdownify | strip_newlines | replace: '<p>', '' | replace: '</p>', '' }}
+      </p>
     </div>
-    <div class="row">
-      <div class="col offset-l4 l4 s12 offset-m1 m10 center" id="user">
-        <a class="btn waves-effect waves-light" id="loginBtn">Iniciar sesión</a>
-      </div>
+    {% endfor %}
+  </div>
+  <div class="row">
+    <div class="col offset-l4 l4 s12 offset-m1 m10 center" id="user">
+      <a class="btn waves-effect waves-light" id="loginBtn">Iniciar sesión</a>
     </div>
   </div>
-  <div class="footer-copyright">
-    <div class="container">
-      © 2015 Bryan Horna. Todos los derechos reservados.
-      <a class="grey-text text-lighten-3 right" target="_blank"
-        href="{{ site.github.repository_url }}/blob/gh-pages/LICENSE">
-        Licencia MIT</a>
-    </div>
-  </div>
+</div>
+<div class="footer-copyright">
+<div class="container">
+  © 2015 - 2016 Bryan Horna. Todos los derechos reservados.
+  <a class="grey-text text-lighten-3 right" target="_blank"
+    href="{{ site.github.repository_url }}/blob/gh-pages/LICENSE">
+    Licencia MIT</a>
+</div>
+</div>
 </footer>

@@ -1,0 +1,25 @@
+- title: Acerca del autor
+  content: >
+    La persona que mantiene este sitio web y el contenido que en él se incluye
+    es [Bryan Horna](https://bryanjhv.me), el cual es un estudiante más de la
+    Universidad antes dicha, y tiene la gran esperanza que algún día Perú sepa
+    utilizar sus conocimientos de informática para construir y/o desarrollar
+    algo útil y valioso para la sociedad mundial.
+
+- title: Acerca de esta web
+  content: >
+    La presente web fue hecha usando el genial motor de plantillas
+    [Jekyll](http://jekyllrb.com), usa para el diseño el moderno framework
+    [Materialize](http://materializecss.com), y está hospedado por
+    [GitHub](https://github.com).  
+    Los recursos para las presentaciones usan como framework
+    [reveal.js](https://github.com/hakimel/reveal.js), y el control maestro de
+    las presentaciones es realizado gracias a Google.
+
+- title: Contribuyendo
+  content: >
+    Si desearas contribuir a este proyecto, puedes abrir un "issue" en la
+    [página](https://github.com/bryanjhv/talleres) en GitHub del proyecto
+    indicando lo que deseas contribuir y dónde debe ser colocado. Suelo
+    preservar los créditos de todo aquel que contribuye, además estaré muy
+    agradecido por ello al igual que los lectores. :)

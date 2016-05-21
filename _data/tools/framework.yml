@@ -1,0 +1,8 @@
+- name: reveal.js
+  link: https://github.com/hakimel/reveal.js
+  desc: >
+    Es un marco de trabajo para crear presentaciones (diapositivas) en la web,
+    mediante prácticamente el uso de HTML y una pizca de JavaScript y CSS. Es el
+    que actualmente uso para las diapositivas del taller debido a mi costumbre
+    con el código y las ventajas que ofrece (ejecución de código en la web,
+    resaltado de sintaxis, "multiplex", notas, entre otras).
