@@ -1,7 +1,3 @@
-/*jslint sloppy: true, vars: true*/
-/*jslint indent: 2, maxerr: 50, maxlen: 80*/
-/*global CustomEvent, gapi*/
-
 (function (g) {
 
   /**
