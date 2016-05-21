@@ -1,5 +1,5 @@
 jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4
 materialize: //cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0
-reveal: //cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0
+reveal: //cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0
 socketio: //cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16
 jslabs: //raw.github.com/bryanjhv/js-labs/master/src
