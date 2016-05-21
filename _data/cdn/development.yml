@@ -1,4 +1,3 @@
-google: /lib/google-fake
 jquery: /lib/jquery/dist
 materialize: /lib/materialize/dist
 reveal: /lib/reveal.js

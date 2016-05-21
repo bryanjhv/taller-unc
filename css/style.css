@@ -64,19 +64,6 @@ iframe {
   text-decoration: underline;
 }
 
-.index .page-footer #loginBtn:hover,
-.index .page-footer #logoutBtn:hover {
-  text-decoration: none;
-}
-
-.index .page-footer #logoutBtn {
-  margin-top: 8px;
-}
-
-.index .page-footer .card-panel .valign-wrapper {
-  margin-bottom: 0;
-}
-
 @media only screen and (max-width: 600px) {
   #tagline {
     font-size: 150%;
