@@ -3,3 +3,4 @@ jquery: /lib/jquery/dist
 materialize: /lib/materialize/dist
 reveal: /lib/reveal.js
 socketio: /lib/socket.io-client
+jslabs: /lib/js-labs/src

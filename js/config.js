@@ -1,18 +1,20 @@
 ---
 ---
 
-(function () {
+{% assign cdn = site.data.cdn[jekyll.environment] %}
+(function ($) {
 
   // Include CSS for printing
   if (location.search.match(/print-pdf/gi)) {
-    $('head').appendChild(
-      $('!link', {
+    $('head').append(
+      $('!link').attr({
         rel: 'stylesheet',
         href: '{{ cdn.reveal }}/css/print/pdf.css'
       })
     );
   }
 
+  // Get the multiplex secret
   function getSecret(email) {
     var trc = [
       '\u0062\x72y\x61n\u006a',
@@ -40,76 +42,74 @@
     return null;
   }
 
+  var $body = $('body');
+
+  var multiplex_src = '{{ cdn.reveal }}/plugin/multiplex';
+
   var opts = {
     controls: true,
     progress: true,
+    slideNumber: true,
     history: true,
-    center: true,
-
+    overview: false,
+    touch: true,
     help: false,
-    previewLinks: true,
+    mouseWheel: true,
 
-    transition: 'slide',
+    transition: 'convex',
+    transitionSpeed: 'slow',
 
     multiplex: {
       secret: null,
       id: '8ca76258935d301c',
-      url: 'revealjs.jit.su:80'
+      url: '{{ site.data.multiplex[jekyll.environment] }}'
     },
 
     dependencies: [{
-      src: '{{ cdn.socketio }}/socket.io.min.js',
-      async: true,
-      callback: function () {
-        io.transports = ['xhr-polling'];
-      }
-    }, {
-      src: '{{ cdn.reveal }}/plugin/multiplex/master.min.js',
-      async: true
-    }, {
       src: '{{ cdn.reveal }}/lib/js/classList.min.js',
       condition: function () {
-        return !$('body').classList;
+        return !$body.prop('classList');
       }
     }, {
       src: '{{ cdn.reveal }}/plugin/highlight/highlight.min.js',
       async: true,
       condition: function () {
-        return !!$('pre code');
+        return !$('pre code').isEmpty();
       },
       callback: function () {
         hljs.initHighlightingOnLoad();
-
-        // TODO: find a better solution for storing authentication
-        var id = setTimeout(function () {
-          clearTimeout(id);
-          hljs.initHighlighting();
-        }, 5000);
       }
     }, {
       src: '{{ cdn.reveal }}/plugin/zoom-js/zoom.js',
       async: true,
       condition: function () {
-        return !$('body').classList;
+        return !$body.prop('classList');
       }
+    }, {
+      src: '{{ cdn.socketio }}/socket.io.min.js',
+      async: true
+    }, {
+      src: multiplex_src + '/client.min.js',
+      async: true
     }]
   };
 
   Login.onUser(function (user) {
+    var secret = getSecret(user ? user.email : user);
 
-    opts.multiplex.secret = getSecret(user ? user.email : user);
+    if (secret) {
+      var child = $('[src="' + multiplex_src + '/client.min.js"]', 0);
+      if (child.isElem()) {
+        child = child.el;
+        $body.el.removeChild(child);
+      }
 
-    Reveal.initialize(opts);
-
+      Reveal.getConfig().multiplex.secret = secret;
+      child = $('!script').attr({ src: multiplex_src + '/master.min.js' });
+      $body.append(child);
+    }
   }, true);
 
-  // TODO: find a better solution for storing authentication
-  var isReadyTimeout = setTimeout(function () {
-    clearTimeout(isReadyTimeout);
+  Reveal.initialize(opts);
 
-    if (!Reveal.isReady()) {
-      Reveal.initialize(opts);
-    }
-  }, 5000);
-
-}());
+}($$));

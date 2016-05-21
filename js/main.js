@@ -1,47 +1,36 @@
----
----
-
 $(function () {
 
-  var subdomain = '{{ site.url }}'.split('//')[1].split('.')[0];
-  if (location.pathname.indexOf(subdomain) == 1) {
-    var url = '';
-    url += location.protocol + '//' + subdomain + '.' + location.host;
-    url += location.pathname.slice(subdomain.length + 1);
-    location.assign(url);
-  }
-
   // We have JavaScript enabled
-  var body = $('body');
+  var body = $$('body');
   body.className = body.className.replace(/no-js ?/, '');
 
   // Cancel navigating to #
-  each($('a[href="#"]'), function (a) {
-    a.addEventListener('click', function (e) {
+  $$('a[href="#"]').each(function (link) {
+    link.on('click', function (e) {
       e.preventDefault();
     });
   });
 
-  var userDiv = $('#user');
+  var userDiv = $$('#user');
 
-  if (userDiv) {
+  if (userDiv.isElem()) {
     Login.onUser(function (user) {
 
-      while (userDiv.firstChild) {
-        userDiv.removeChild(userDiv.firstChild);
+      while (userDiv.el.firstChild) {
+        userDiv.el.removeChild(userDiv.el.firstChild);
       }
 
       var btnCls = 'btn waves-effect waves-light';
 
       if (!user) {
-        var loginBtn = $('!a', {
+        var loginBtn = $$('!a').prop({
           className: btnCls,
           id: 'loginBtn',
           innerHTML: 'Iniciar sesión'
         });
-        auth2.attachClickHandler(loginBtn);
+        auth2.attachClickHandler(loginBtn.el);
 
-        userDiv.appendChild(loginBtn);
+        userDiv.append(loginBtn);
       } else {
         var html = '\n' +
           '<div class="card-panel teal lighten-1 z-depth-1">' +
@@ -61,11 +50,11 @@ $(function () {
           return user[p1];
         });
 
-        userDiv.innerHTML = html;
+        userDiv.html(html);
 
-        $('#logoutBtn').addEventListener('click', function onClick(e) {
+        $$('#logoutBtn').on('click', function onClick(e) {
           e.preventDefault();
-          this.removeEventListener('click', onClick, false);
+          this.off('click', onClick, false);
           auth2.signOut();
         }, false);
       }
