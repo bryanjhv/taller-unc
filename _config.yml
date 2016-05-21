@@ -1,25 +1,38 @@
-# Site settings
-title: Taller UNC
-description: >
-  Contenido compartido y usado en el taller de programación y hacking que
-  imparto en la E.A.P. Ingeniería de Sistemas de la Universidad Nacional de
-  Cajamarca.
-url: https://talleres.bryanjhv.xyz
-repo: https://github.com/bryanjhv/talleres
-permalink: /:year/:month/:day/
-local: false
-
-# Parsing options
+# Handling Reading
+exclude:
+- README.md
+- LICENSE
+- Gemfile*
 encoding: utf-8
+
+# Plugins
+gems:
+- jekyll-github-metadata
+- jekyll-seo-tag
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+
+# Output Configuration
+permalink: pretty
 timezone: America/Lima
-exclude: [README.md, LICENSE, Gemfile*]
 
 # Defaults
 defaults:
-  -
-    scope:
-      path: ''
-      type: posts
-    values:
-      layout: presentation
-      kind: presentation
+-
+  scope:
+    path: ''
+    type: posts
+  values:
+    layout: presentation
+    kind: presentation
+
+# Site Settings
+title: Talleres UNC
+description: >
+  Contenido compartido y usado en los talleres de programación y hacking que
+  imparto en Ingeniería de Sistemas de la Universidad Nacional de Cajamarca.
+url: https://talleres.bryanjhv.xyz
+author: bryanjhv
+repository: bryanjhv/talleres
