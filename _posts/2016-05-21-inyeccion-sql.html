@@ -1,0 +1,223 @@
+---
+title: "Hacking: Inyección SQL"
+slug: inyeccion-sql
+category: hacking
+description: >
+  Inyecciones SQL, conceptos, consultas, escenarios de infección y soluciones.
+---
+
+<section>
+  <h1>Inyección SQL</h1>
+  <h2>Hacking</h2>
+</section>
+
+<section>
+  <section>
+    <h2>Conceptos</h2>
+    <p class="fragment fade-in">
+      DB: Almacén de datos simples o estructurados.
+    </p>
+    <p class="fragment fade-in">
+      Motor de DB: Programa que implementa acceso a data.
+    </p>
+    <p class="fragment fade-in">
+      SQL: Lenguaje de consulta (para DB).
+    </p>
+  </section>
+  <section>
+    <h2>Conceptos</h2>
+    <p class="fragment fade-in">
+      Inyección: Interceptar una transacción.
+    </p>
+    <p class="fragment fade-in">
+      Transacción: Consulta (o grupo) hecha a una DB.
+    </p>
+    <p class="fragment fade-in">
+      Tabla, columna, registro: Componentes de DB.
+    </p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3>Manipulación: <code>SELECT</code></h3>
+    <pre><code data-trim>
+      SELECT * FROM users;
+    </code></pre>
+  </section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3>Manipulación: <code>INSERT</code></h3>
+    <pre><code data-trim>
+      INSERT INTO users VALUES ('bryanjhv', 'password');
+    </code></pre>
+  </section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3>Manipulación: <code>UPDATE</code></h3>
+    <pre><code data-trim>
+      UPDATE users SET username = 'bryan' WHERE id = 1;
+    </code></pre>
+  </section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3>Manipulación: <code>DELETE</code></h3>
+    <pre><code data-trim>
+      DELETE FROM users;
+    </code></pre>
+  </section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3>Filtrado: <code>WHERE</code></h3>
+    <pre><code data-trim>
+      SELECT * FROM users WHERE id >= 5;
+    </code></pre>
+  </section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3>Filtrado: <code>ORDER BY</code></h3>
+    <pre><code data-trim>
+      SELECT * FROM personas ORDER BY nombre;
+    </code></pre>
+  </section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3>Filtrado: <code>LIMIT</code></h3>
+    <pre><code data-trim>
+      SELECT * FROM personas ORDER BY pago LIMIT 3;
+    </code></pre>
+  </section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3>Operadores: <code>BETWEEN</code></h3>
+    <pre><code data-trim>
+      SELECT * FROM personas WHERE edad BETWEEN (18, 30);
+    </code></pre>
+  </section>
+  <section>
+    <h2>INTRODUCCIÓN A SQL</h2>
+    <h3 style="color: red;">Operadores: <code>AND</code>/<code>OR</code></h3>
+    <pre><code data-trim>
+      SELECT * FROM users WHERE id >= 5 AND id <= 30;
+    </code></pre>
+  </section>
+</section>
+
+<section>
+  <h2>MySQL</h2>
+  <p>
+    Motor de DB opensource, gratis. Muy usado con PHP.
+  </p>
+</section>
+
+<section>
+  <section>
+    <h2>Escenarios</h2>
+    <h3>Formularios</h3>
+    <p class="fragment fade-in">
+      Se pide un usuario y se ingresa una consulta.
+    </p>
+  </section>
+  <section>
+    <h2>Escenarios</h2>
+    <h3>Concatenación</h3>
+    <p class="fragment fade-in">
+      Al leer el usuario, se lo adjunta a la consulta.
+    </p>
+  </section>
+  <section>
+    <h2>Escenarios</h2>
+    <h3>No validación</h3>
+    <p class="fragment fade-in">
+      El usuario contiene símbolos, o tiene 1000 caracteres.
+    </p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Implicaciones</h2>
+    <h3>Obtener DB design</h3>
+    <p class="fragment fade-in">
+      "Atar cabos" lleva a esto.
+    </p>
+  </section>
+  <section>
+    <h2>Implicaciones</h2>
+    <h3>Filtrado</h3>
+    <p class="fragment fade-in">
+      Los muy conocidos "leaks", se filtra información.
+    </p>
+  </section>
+  <section>
+    <h2>Implicaciones</h2>
+    <h3>Desconfianza</h3>
+    <p class="fragment fade-in">
+      ¿Confiarías en un sitio si deja libre tus datos?
+    </p>
+    <p class="fragment fade-in">
+      No los datos que piensas, los comunes.
+    </p>
+  </section>
+  <section>
+    <h2>Implicaciones</h2>
+    <h3>Data loss</h3>
+    <p class="fragment fade-in">
+      Si puede ejecutar algo, ¿por qué no un ...?
+      <pre><code data-trim>
+        DELETE FROM payments;
+      </code></pre>
+    </p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Soluciones</h2>
+    <h3>Escapar caracteres</h3>
+    <p class="fragment fade-in">
+      Una consulta no debe tener <code>"</code> o <code>'</code>.<br>
+      Reemplazar <code>"</code> por <code>\"</code>.
+    </p>
+  </section>
+  <section>
+    <h2>Soluciones</h2>
+    <h3>Validación</h3>
+    <p class="fragment fade-in" data-fragment-index="1">
+      Un nombre de usuario debe:
+    </p>
+    <p class="fragment fade-in" data-fragment-index="2">
+      <ul>
+        <li>Tener entre 6 y 30 caracteres.</li>
+        <li>Hacer match a <code>[A-Za-z][A-Za-z0-9._]+</code>.</li>
+      </ul>
+    </p>
+  </section>
+  <section>
+    <h2>Soluciones</h2>
+    <h3>Guards</h3>
+    <p class="fragment fade-in">
+      Por cada consulta, preguntar si el usuario está autorizado.
+    </p>
+    <p class="fragment fade-in">
+      Poner un campo oculto y verificarlo en cada petición.
+    </p>
+  </section>
+  <section>
+    <h2>Soluciones</h2>
+    <h3>Librerías</h3>
+    <p class="fragment fade-in">
+      Éstas han pasado por esto y son mantenidas.
+      Ejemplos para PHP:
+      <ul>
+        <li><code>illuminate/database</code></li>
+        <li><code>Zend ORM</code></li>
+      </ul>
+    </p>
+  </section>
+</section>
+
+<section>
+  <h3>Fin</h3>
+</section>
