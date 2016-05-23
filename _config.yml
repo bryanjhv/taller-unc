@@ -1,3 +1,9 @@
+# Where Things Are
+collections:
+  pdf:
+    output: true
+    permalink: /pdf/:path
+
 # Handling Reading
 exclude:
 - README.md
