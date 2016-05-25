@@ -2,7 +2,8 @@
 
 Contenido compartido y usado en el taller sobre diferentes temas de programación
 y hacking, el cual imparto dentro de la Escuela Académico Profesional de
-Ingeniería de Sistemas en la Universidad Nacional de Cajamarca desde el año 2015 ¿y quién sabe cuántos años más?
+Ingeniería de Sistemas en la Universidad Nacional de Cajamarca desde el año 2015
+¿y quién sabe cuántos años más?
 
 ## Herramientas usadas
 
