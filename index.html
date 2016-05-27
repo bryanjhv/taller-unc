@@ -25,8 +25,8 @@ kind: index
           {% for post in site.posts | sort: 'date' %}
           <li>
             <div class="collapsible-header active">
-              <a href="{{ post.url }}">{{ post.title }}</a>
-              <a href="/pdf/{{ post.categories | join: '-' }}/{{ post.date | date: '%Y-%m-%d' }}-{{ post.slug }}.pdf" class="right hide-on-small-only">PDF</a>
+              <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+              <a href="{{ site.baseurl }}/pdf/{{ post.categories | join: '-' }}/{{ post.date | date: '%Y-%m-%d' }}-{{ post.slug }}.pdf" class="right hide-on-small-only">PDF</a>
             </div>
             <div class="collapsible-body">
               <p><b>{{ post.date | date_to_string | replace: 'Jan', 'Ene' | replace: 'Apr', 'Abr' | replace: 'Aug', 'Ago' | replace: 'Sep', 'Set' | replace: 'Dec', 'Dic' }}</b>&nbsp;&nbsp;{{ post.description | strip_newlines }}</p>
