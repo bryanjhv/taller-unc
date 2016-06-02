@@ -1,10 +1,12 @@
-HOST_DIR = '/var/www/default'
+Dir.chdir File.dirname __FILE__
+
+WWW_DIR = ENV['WWW_DIR'] || '/var/www/default'
 SITE_DIR = File.basename Dir.pwd
-DEST_DIR = "#{HOST_DIR}/#{SITE_DIR}"
+LIB_DIR = File.join WWW_DIR, 'lib'
+DEST_DIR = File.join WWW_DIR, SITE_DIR
 
 
 task :default => :deploy
-
 
 desc 'Clean previous site builds'
 task :clean do
@@ -13,7 +15,7 @@ task :clean do
 
   # Clean deployed files
   rm_rf DEST_DIR
-  rm_f "#{HOST_DIR}/lib"
+  rm_f LIB_DIR
 end
 
 desc 'Build Jekyll site'
@@ -33,8 +35,8 @@ end
 desc 'Deploy site locally'
 task :deploy => [:clean, :build] do
   # Move the site to deployment
-  mv '_site', "#{DEST_DIR}"
+  mv '_site', DEST_DIR
 
-  # Link libraries
-  ln_sf "#{DEST_DIR}/lib", "#{HOST_DIR}/lib"
+  # Move libraries
+  mv File.join(DEST_DIR, 'lib'), LIB_DIR
 end

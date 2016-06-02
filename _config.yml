@@ -10,7 +10,7 @@ exclude:
 - LICENSE
 - Gemfile*
 - bower.json
-- Rakefile
+- Rakefile.rb
 encoding: utf-8
 
 # Plugins
