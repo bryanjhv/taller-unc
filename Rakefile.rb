@@ -2,7 +2,6 @@ Dir.chdir File.dirname __FILE__
 
 WWW_DIR = ENV['WWW_DIR'] || '/var/www/default'
 SITE_DIR = File.basename Dir.pwd
-LIB_DIR = File.join WWW_DIR, 'lib'
 DEST_DIR = File.join WWW_DIR, SITE_DIR
 
 
@@ -15,7 +14,7 @@ task :clean do
 
   # Clean deployed files
   rm_rf DEST_DIR
-  rm_f LIB_DIR
+  rm_rf File.join WWW_DIR, 'lib'
 end
 
 desc 'Build Jekyll site'
@@ -38,5 +37,5 @@ task :deploy => [:clean, :build] do
   mv '_site', DEST_DIR
 
   # Move libraries
-  mv File.join(DEST_DIR, 'lib'), LIB_DIR
+  cp_r 'lib', WWW_DIR
 end

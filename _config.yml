@@ -11,6 +11,7 @@ exclude:
 - Gemfile*
 - bower.json
 - Rakefile.rb
+- lib/*
 encoding: utf-8
 
 # Plugins
