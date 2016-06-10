@@ -20,7 +20,6 @@
     controls: true,
     progress: true,
     slideNumber: true,
-    history: true,
     overview: false,
     touch: true,
     help: false,

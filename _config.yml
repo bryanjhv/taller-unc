@@ -14,6 +14,9 @@ exclude:
 - lib/*
 encoding: utf-8
 
+# Filtering Content
+future: true
+
 # Plugins
 gems:
 - jekyll-github-metadata
