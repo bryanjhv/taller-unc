@@ -1,0 +1,231 @@
+---
+title: "Hacking: Ataques CSRF"
+slug: ataques-csrf
+category: hacking
+description: >
+  Ataques CSRF, conceptos, métodos HTTP, escenarios y soluciones.
+---
+
+<section>
+  <h1>Ataques CSRF</h1>
+  <h2>Hacking</h2>
+</section>
+
+<section>
+  <h2>Conceptos</h2>
+  <p class="fragment fade-in">
+    HTTP: Estándar (protocolo) para acceder a páginas web.
+  </p>
+  <p class="fragment fade-in">
+    Método HTTP: Forma de transmitir datos vía HTTP.
+  </p>
+  <p class="fragment fade-in">
+    Parámetros: Valores pasados a un programa.
+  </p>
+  <p class="fragment fade-in">
+    Query string: "Cadena de búsqueda" pasada a una página.
+  </p>
+</section>
+
+<section>
+  <section>
+    <h2>MÉTODOS HTTP</h2>
+    <h3><code>GET</code></h3>
+    <p class="fragment fade-in">
+      Envía datos de forma <b>visible</b> a una página web. Se ve en forma de
+      <i>URL</i>.
+    </p>
+  </section>
+  <section>
+    <h2>MÉTODOS HTTP</h2>
+    <h3><code>POST</code></h3>
+    <p class="fragment fade-in">
+      Envía datos parcialmente <b>ocultos</b> a una página web. Es usado en
+      formularios de registro, inicio de sesión, compras.
+    </p>
+  </section>
+  <section>
+    <h2>MÉTODOS HTTP</h2>
+    <h3><code>PUT</code></h3>
+    <p class="fragment fade-in">
+      "Pone" o actualiza recursos en un servidor. Tiene usos especiales.
+    </p>
+  </section>
+  <section>
+    <h2>MÉTODOS HTTP</h2>
+    <h3><code>DELETE</code></h3>
+    <p class="fragment fade-in">
+      Elimina un recurso del servidor. También tiene usos especiales.
+    </p>
+  </section>
+  <section>
+    <h2>MÉTODOS HTTP</h2>
+    <h3><code>HEAD, OPTIONS, PATCH</code></h3>
+    <p class="fragment fade-in">
+      Métodos adicionales, usados en aplicaciones grandes.
+    </p>
+  </section>
+</section>
+
+<section>
+  <h2>Carga de datos</h2>
+  <img src="{{ site.baseurl }}/img/hacking/carga-datos.jpg">
+</section>
+
+<section>
+  <section>
+    <h2>¿Qué es CSRF?</h2>
+    <p class="fragment fade-in">
+      <b>CSRF</b> indica <i><b>C</b>ross <b>S</b>ite <b>R</b>equest
+      <b>F</b>orgery</i>.
+    </p>
+  </section>
+  <section>
+    <h2>¿Qué es CSRF?</h2>
+    <h3>Cross</h3>
+    <p class="fragment fade-in">
+      "Cruz", o "cruce", hace referencia a un cruce de lugares, o sitios web.
+    </p>
+  </section>
+  <section>
+    <h2>¿Qué es CSRF?</h2>
+    <h3>Site</h3>
+    <p class="fragment fade-in">
+      El sitio web siendo atacado, o que admite CSRF.
+    </p>
+  </section>
+  <section>
+    <h2>¿Qué es CSRF?</h2>
+    <h3>Request</h3>
+    <p class="fragment fade-in">
+      La petición del usuario, al navegar, obtener imágenes, entre otros.
+    </p>
+  </section>
+  <section>
+    <h2>¿Qué es CSRF?</h2>
+    <h3>Forgery</h3>
+    <p class="fragment fade-in">
+      Falsificación.
+    </p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>HTTP basics</h2>
+    <h3>Obtención de recursos</h3>
+    <p class="fragment fade-in" data-fragment-index="1">
+      Al cargar una página, el navegador:
+    </p>
+    <ol class="fragment fade-in" data-fragment-index="2">
+      <li>Lee las etiquetas que piden recursos.</li>
+      <li>Pide el recurso al servidor web<span id="basicsback-tx"></span>.</li>
+      <li>Si obtuvo el recurso, lo agrega localmente.</li>
+      <li>Si no lo obtuvo, notifica al navegador.</li>
+    </ol>
+  </section>
+  <section data-state="basicsback">
+    <h2>HTTP basics</h2>
+    <h3>Obtención de recursos</h3>
+    <p>
+      ¿Vieron algo de raro en la diapositiva anterior?
+    </p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Escenarios</h2>
+    <h3>Sesiones</h3>
+    <p class="fragment fade-in">
+      Para que un CSRF sea "malo", se debe dar inicios de sesión.
+    </p>
+  </section>
+  <section>
+    <h2>Escenarios</h2>
+    <h3>Compras/Pagos</h3>
+    <p class="fragment fade-in">
+      En tu "carrito" pueden andar cosas sospechosas... Pero como tú vas a pagar
+      por ellas, ¿qué importa?
+    </p>
+  </section>
+  <section>
+    <h2>Escenarios</h2>
+    <h3>Muchos más</h3>
+    <p class="fragment fade-in">
+      ¿Por qué los ataques CSRF pueden estar en todos lados?
+    </p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Implicaciones</h2>
+    <h3>Sorpresas</h3>
+    <p class="fragment fade-in">
+      Abriste un enlace y tienes US$ 5 dólares menos.
+    </p>
+  </section>
+  <section>
+    <h2>Implicaciones</h2>
+    <h3>Sorpresas enormes</h3>
+    <p class="fragment fade-in">
+      Por cada <code>F5</code> que haces, el navegador te cobra. :D
+    </p>
+    <p class="fragment fade-in">
+      En otros términos: mantener presionada esa tecla por 5 segundos te cuesta
+      <i>3 recargas por segundo * 5 segundos * US$ 5 = US$ 75</i>.
+    </p>
+  </section>
+  <section>
+    <h2>Implicaciones</h2>
+    <h3>Inseguridad</h3>
+    <p class="fragment fade-in">
+      ¿Y por qué no?
+    </p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Soluciones</h2>
+    <h3></h3>
+    <p class="fragment fade-in">
+      Validación de "referer".
+    </p>
+  </section>
+  <section>
+    <h2>Soluciones</h2>
+    <h3></h3>
+    <p class="fragment fade-in">
+      CSRF Guard, o pedir y validar un campo oculto por cada transacción.
+    </p>
+  </section>
+  <section>
+    <h2>Soluciones</h2>
+    <h3></h3>
+    <p class="fragment fade-in">
+      Usar HTTPS (los sitios sólo HTTP no tienen permiso de cargar HTTPS).
+    </p>
+  </section>
+</section>
+
+<section>
+  <h3>Fin</h3>
+</section>
+
+<script defer>
+  var id = setTimeout(function () {
+    clearTimeout(id);
+
+    Reveal.addEventListener('basicsback', function () {
+      var id2 = setTimeout(function () {
+        clearTimeout(id);
+
+        var tx = document.getElementById('basicsback-tx');
+        tx.innerText = ', sin importar de dónde viene';
+        tx.style.color = 'red';
+      }, 1000);
+    }, false);
+  }, 5000);
+</script>
