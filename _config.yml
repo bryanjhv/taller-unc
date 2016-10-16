@@ -46,6 +46,7 @@ title: Talleres UNC
 description: >
   Contenido compartido y usado en los talleres de programación y hacking que
   imparto en Ingeniería de Sistemas de la Universidad Nacional de Cajamarca.
-url: https://talleres.bryanjhv.xyz
+url: https://bryanjhv.github.io
+baseurl: /talleres
 author: bryanjhv
 repository: bryanjhv/talleres

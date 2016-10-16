@@ -8,7 +8,8 @@ Ingeniería de Sistemas en la Universidad Nacional de Cajamarca desde el año 20
 ## Herramientas usadas
 
 Para ver la información relacionada a las herramientas usadas para hacer todo
-esto posible, visita la página de los [talleres](https://talleres.bryanjhv.xyz).
+esto posible, visita la página de los
+[talleres](https://bryanjhv.github.io/talleres).
 
 ## Licencia
 
